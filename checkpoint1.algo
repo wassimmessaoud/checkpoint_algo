@@ -1,0 +1,27 @@
+ALGORITHM checkpoint_algo
+VAR
+    X:= CHAR 
+    sentence:=STRING
+    lengt,vowels,words:= INTEGER
+BEGIN
+lengt:= 0;
+vowels:=0;
+words:=1;
+sentence:="";
+REPEAT
+    Write('put a letter');
+    Read(X);
+    sentence:=sentence + X;
+    lengt:=lengt + 1;
+    IF (X' ') THEN
+    words:=words + 1;
+    END_IF
+    IF (X in [A,E,U,I,O,Y,a,e,y,i,u,o]) THEN
+        vowels:= vowels + 1;
+    END_IF
+UNTIL (X = ".");
+Write('sentence is', sentence);
+Write('lenght is',lengt);
+Write('numbre of words is' ,words);
+Write('numbre of vowels is' , vowels);
+END
